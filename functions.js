@@ -38,3 +38,25 @@ function isEven(number){
 }
 
 console.log(isEven(8));
+
+
+// returning functions
+// how to return from a function
+function addition(a, b){
+    return a + b;
+}
+
+console.log(addition(2, 4));
+
+// default parameters for Javascript functions
+function calc(a, b){
+    return (2 * (a + b));
+}
+
+function calculation(a, b=0){
+    return (2 * (a + b));
+}
+
+console.log(calculation(10))
+
+console.log(calc(3, 4));
