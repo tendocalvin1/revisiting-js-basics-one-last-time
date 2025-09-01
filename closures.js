@@ -169,3 +169,122 @@ const [deposit, withdraw, getBalance] = createBankAccount("Initial Deposit")
 console.log(deposit()); // invokes the deposit function
 console.log(withdraw()); // invokes the withdraw function
 console.log(getBalance()); // invokes the getBalance function
+
+
+//Rate Limiter
+// Create a function limitCalls(fn, maxCalls) that allows a function fn to be called only up 
+// to maxCalls times. After that, it always returns "Limit reached".
+
+function limitCalls(fn, maxCalls) {
+    let count = 0; // Tracks number of calls
+    
+    return function(...args) {
+        if (count >= maxCalls) {
+            return "Limit reached";
+        }
+        count++;
+        return typeof fn === 'function' ? fn(...args) : fn;
+    };
+}
+
+// Example usage:
+const beeps = limitCalls((x) => `Beep ${x}`, 4);
+
+// Test cases
+console.log(beeps(1)); // "Beep 1"
+console.log(beeps(2)); // "Beep 2"
+console.log(beeps(3)); // "Beep 3"
+console.log(beeps(4)); // "Beep 4"
+console.log(beeps(5)); // "Limit reached"
+console.log(beeps(6)); // "Limit reached"
+
+
+// Memoized Factorial
+// Write a function memoizedFactorial() that caches factorial results so that 
+// repeated calls with the same number don’t recompute.
+
+const memoizedFactorial = () => {
+    let factorial_results = [];
+}
+
+
+//Event Emitter (Mini Pub/Sub System)
+//Build a closure-based createEventEmitter() that supports:
+//subscribe(event, callback),
+//emit(event, data),
+//unsubscribe(event, callback).
+const createEventEmitter =()=>{
+    let Event = "Sports Day";
+    let Event_two = "It's actually sports day tomorrow."
+    let Event_three = "I do not want to hear about the sports announcement any more"
+    const subscribe =()=>{
+        return Event;
+    }
+
+    const emit =()=>{
+        return Event_two;
+    }
+
+
+    const unsubscribe =()=>{
+        return Event_three;
+    }
+
+
+    return [subscribe, emit , unsubscribe]
+}
+
+const [subscribe, emit , unsubscribe] = createEventEmitter("initial message");
+console.log(emit()); // evokes the emit function
+console.log(subscribe()); // evokes the subscribe function
+console.log(unsubscribe()); // evokes the unsubscribe function
+
+
+// Custom Hook Simulation (React-like)
+// Implement useCounter(initialValue) that behaves like a React hook using closures. 
+// It should return [getCount, increment, decrement, reset].
+const useCounter =()=>{
+    let count = 0;
+        const getCount =()=>{
+            return count;
+        }
+
+        const increment =()=>{
+            return count += 1;
+        }
+
+        const decrement =()=>{
+            return count -= 1;
+        }
+
+        const reset =()=>{
+            return count === 0;
+        }
+
+
+        return [getCount, increment, decrement, reset];
+}
+
+const [getCount, increment, decrement, reset] = useCounter("initial digit");
+console.log(getCount()); // evokes the getCount function
+console.log(increment()); // evokes the increment function
+console.log(decrement()); // evokes the decrement function
+console.log(reset()); // evokes the reset function
+
+
+// Currying with Closures
+// Write a function curry(fn) that transforms a function into its curried form. For example:
+// function sum(a, b, c) { return a + b + c; }
+// const curriedSum = curry(sum);
+// console.log(curriedSum(1)(2)(3)); // 6
+function curry(fn) {
+    return function curried(...args) {
+        if (args.length >= fn.length) {
+            return fn(...args);
+        } else {
+            return function(...args2) {
+                return curried(...args, ...args2);
+            }
+        }
+    };
+}
