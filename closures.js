@@ -138,20 +138,27 @@ console.log(change("I am a Real Estate developer and a software engineer.")); //
 
 
 const createBankAccount = (initial_deposit)=>{
-    let amount = 200000
-    let amount_withdrawn = 5000
-    let interest = 0.25
+    let principal = 50000;
+    let rate = 0.25;
+    let time = 1; // in years
+    let amount_withdrawn = 2000;
+    let interest = principal * rate * time
+    let amount = principal + interest;
+    let balance = amount - amount_withdrawn;
+    let remaining_amount = amount - amount_withdrawn - interest
+    
+    
 
     const deposit =()=>{
         return amount;
     }
 
     const withdraw =()=>{
-        return balance = amount - amount_withdrawn;
+        return balance;
     }
 
     const getBalance =()=>{
-        return balance = deposit - amount_withdrawn - interest
+        return remaining_amount;
     }
 
     return [deposit, withdraw, getBalance]
