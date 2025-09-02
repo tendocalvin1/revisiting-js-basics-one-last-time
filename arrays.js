@@ -77,3 +77,55 @@ console.log(pineapple,orange,berry);
 const [banana,,bear] = ['🍒','🍑','🍅']
 console.log(banana);
 console.log(bear);
+
+// nested array
+const_numbers = [1,2,3,4,[3,5,7,9]]
+console.log(const_numbers[4][2]);
+
+
+// rest and spread operator
+// ...
+const [strawberry, apple, ...rest]  = ['🍒','🍑','🍅','🌽','🍄']
+console.log(rest)
+
+// swapping
+
+let a = 10;
+let b = 14;
+[a, b] = [b, a]
+console.log(a, b);
+
+
+// merging things in arrays
+// we use the spread operator .
+const numbers = [1,2,3,4,5,6];
+const letters = ['a','b','c','d','e','f'];
+
+const alphabets = [...numbers, ...letters]
+console.log(alphabets);
+
+
+// length property
+
+console.log(alphabets.length);
+console.log(numbers.length);
+console.log(letters.length);
+
+// JavaScript Array Methods
+// 1. concat() method
+const first = [1,2,3];
+const second = [4,5,6];
+const combined = first.concat(second)
+console.log(combined);
+
+
+const one = [2,4,6,8,10];
+const three = [12,14,16,18,20];
+const five = [22,24,26,28,30]
+const merged = one.concat(three, five)
+console.log(merged);
+
+
+const emotions = ['😂','😁','🤣','😍','😄','😎','😊']
+const joined = emotions.join("<==>")
+console.log(joined);
