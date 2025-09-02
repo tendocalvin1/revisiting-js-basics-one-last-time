@@ -129,3 +129,43 @@ console.log(merged);
 const emotions = ['😂','😁','🤣','😍','😄','😎','😊']
 const joined = emotions.join("<==>")
 console.log(joined);
+
+// fill() - This changes the origin of the array or it mutates the array.
+
+const colors = ['red','yellow','green'];
+colors.fill('pink', 1, 3)
+console.log(colors)
+
+
+// includes() - checks if an element exists in an array
+const names = ['alex','maya','melissa','arnold','debby', 'alex']
+console.log(names.includes('july'))  // false
+console.log(names.includes('melissa'))  // true
+
+// indexOf()
+console.log(names.indexOf('alex'));
+console.log(names.indexOf('debby'));
+console.log(names.lastIndexOf('alex'))
+
+// sort() 
+//explanation of sort()
+// The default sort() method converts the element types into strings
+// the default sorting order is ascending
+
+names.sort()
+console.log(names.sort())
+
+const artists = [
+    'Drake', 'Adele', 'Beyonce', 'Kanye', 'Rihanna', 'Eminem'
+]
+
+console.log("default sorting of artists after array:", artists.sort())
+
+// to sort in descending order
+console.log("descending order:", artists.sort().reverse())
+
+
+
+let ages = [2,4,8,23,34,99,89]
+console.log("descending order:",ages.sort().reverse())
+console.log("ascending order:",ages.sort())
