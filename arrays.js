@@ -169,3 +169,44 @@ console.log("descending order:", artists.sort().reverse())
 let ages = [2,4,8,23,34,99,89]
 console.log("descending order:",ages.sort().reverse())
 console.log("ascending order:",ages.sort())
+
+// splice method
+// splice(starting index, number of elements to be removed, elements to be added)
+
+const institutions = ['renault','redbull','mercedes','ferrari','aston-martin']
+//console.log(institutions.splice(0, 1)) // splice always returns the array that contains
+// the removed elements. output = [Tom]
+
+
+console.log(institutions.splice(2, 1, "audi"))
+console.log(institutions) // here, we have added audi to our array and replaced mercedes
+// since it was at index 2. 
+
+// slice - This copies an array
+// splice - this mutates an array. removes/adds/replaces an element
+
+// at() method
+
+
+const junk_food = ['🍕','🍔','🍟','🌭','🍿','🥗','🧀','🥐','🍞']
+console.log(junk_food.at(0)); // junk_food at index zero
+console.log(junk_food.at(6)); // junk_food at index six
+console.log(junk_food.at(-1));
+
+
+
+// copywithIn
+// syntax; copyWithin(target, start, end)
+
+const nums = [1,2,3,4,5,6]
+nums.copyWithin(0, 3, 6)
+console.log(nums.copyWithin()) // [4,5,6,4,5,6]
+
+const plagues = [1,2,3,4,5,6]
+plagues.copyWithin(0, 3, 5)
+console.log(plagues.copyWithin()) // 
+
+
+
+
+
