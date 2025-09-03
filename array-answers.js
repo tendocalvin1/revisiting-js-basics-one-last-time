@@ -112,3 +112,153 @@ console.log(cars)
 const colors = ['red','blue','green','yellow'];
 const joined = colors.join(" <==> ")
 console.log(joined);
+
+
+// > Consider these input arrays for question **T-21** to **T-48**
+
+// - `employees array`: An array of emplyees working in a department.
+
+//   ```js
+  const employees = [
+    { id: 1, name: "Alice", departmentId: 1, salary: 5000 },  // HR
+    { id: 2, name: "Bob", departmentId: 2, salary: 7000 },    // Engineering
+    { id: 3, name: "Charlie", departmentId: 3, salary: 4500 }, // Marketing
+    { id: 4, name: "Diana", departmentId: 1, salary: 5500 }, // HR
+    { id: 5, name: "Edward", departmentId: 2, salary: 8000 }, // Engineering
+    { id: 6, name: "Fiona", departmentId: 4, salary: 6000 },// sales
+    { id: 7, name: "George", departmentId: 3, salary: 5200 },// marketing
+    { id: 8, name: "Helen", departmentId: 4, salary: 7200 },// sales
+    { id: 9, name: "Ian", departmentId: 2, salary: 4800 },// Engineering
+    { id: 10, name: "Jane", departmentId: 1, salary: 5100 },// HR
+  ];
+//   ```
+
+// - `departments array`: An array of departments where emplyees work.
+
+//   ```js
+  const departments = [
+    { id: 1, name: "HR" },
+    { id: 2, name: "Engineering" },
+    { id: 3, name: "Marketing" },
+    { id: 4, name: "Sales" },
+  ];
+//   ```
+
+// - [ ] **T-021**: Can you filter employees who work in the "Engineering" department?
+
+// First find the id of the "Engineering" department
+const engineering_dept = departments.find(department => department.name === "Engineering");
+console.log(engineering_dept)
+
+// Finding the Engineers
+const Engineers = employees.filter(employee => employee.departmentId === engineering_dept.id)
+console.log(Engineers);
+
+// whenever you use the filter method, it expects something like a function
+
+
+
+// - [ ] **T-022**: Create a new array that combines employee names and 
+//department names in the format: "Alice (HR)".
+
+// .map() is designed for transforming every element in an array into something new.
+
+const format = employees.map(employee => {
+    let dept = departments.find(department => department.id === employee.departmentId)
+    return `${employee.name} ${dept.name}`
+})
+console.log(format)
+
+// - [ ] **T-023**: Find the highest salary among employees.
+const salaries = employees.map(employee => employee.salary)
+const highest_salary = Math.max(...salaries)
+console.log(highest_salary);
+
+// using the reduce method
+// This method takes on two arguments
+const highest_wage = employees.reduce((accumulator, currentEmployee)=>{
+    if (currentEmployee.salary > accumulator.salary){
+        return currentEmployee
+    }else{
+        return accumulator
+    }
+})
+
+console.log(highest_wage)
+
+// - [ ] **T-024**: Check if there is at least one employee in the "Sales" department.
+const sales_dept = employees.map(employee =>{
+    let sales_dept = departments.find(department => department.name === employee.name)
+        return `${employee.name} ${sales_dept.id}`
+})
+console.log(sales_dept);
+
+// const format = employees.map(employee => {
+//     let dept = departments.find(department => department.id === employee.departmentId)
+//     return `${employee.name} ${dept.name}`
+// })
+// console.log(format)
+// - [ ] **T-025**: Write a function to filter employees earning more than 6000.
+// - [ ] **T-026**: Create an array of employee names only.
+// - [ ] **T-027**: Calculate the total salary of all employees using
+// - [ ] **T-028**: Is there any employee earning less than 5000?
+// - [ ] **T-029**: Find the first employee who earns exactly 5100.
+// - [ ] **T-030**: Find the last employee in the "HR" department.
+// - [ ] **T-031**: Find the first employee in the "Marketing" department.
+// - [ ] **T-032**: Check if all employees earn more than 4000.
+// - [ ] **T-033**: Find the first employee in the "Sales" and "HR" department.
+// - [ ] **T-034**: Verify if all employees belong to a department listed in the departments array.
+// - [ ] **T-035**: Log each employee's name and department name to the console.
+// - [ ] **T-036**: Extract all employee names into a single array.
+// - [ ] **T-037**: Increment each employee's salary by 10%
+// - [ ] **T-038**: Assume each employee can have multiple skills. Create an array of employee skills and flatten them. Example: [{name: "Alice", skills: ["Excel", "Management"]}, ...].
+// - [ ] **T-039**: Find the total salary of all employees working in the "Engineering" department.
+// - [ ] **T-040**: Check if there is any department where all employees earn more than 5000.
+// - [ ] **T-041**: Assume each employee has a projects array (e.g., { id: 1, name: "Alice", projects: ["Project A", "Project B"] }).
+// Find the total number of unique projects being handled across all employees.
+// - [ ] **T-042**: For each employee, find their department name and return an array of employee names with their department names.
+// - [ ] **T-043**: Get a list of names of employees earning more than 6000.
+// - [ ] **T-044**: Write a for-of loop to print the names of all employees from the employees array.
+// - [ ] **T-045**: Using a for-of loop, print the names of employees earning more than 5000.
+// - [ ] **T-046**: Modify the for-of loop to destructure each employee object and log their name and salary.
+// - [ ] **T-047**: Write a for-of loop to match employees with their departments and print the results.
+// - [ ] **T-048**: Use Array.prototype.entries() with a for-of loop to print the index and name of each employee.
+
+// - [ ] **T-049**: Given the array-like object below, access the second element and log it:
+
+//   ```js
+//   const arrayLike = { 0: "First", 1: "Second", length: 2 };
+//   ```
+
+// - [ ] **T-050**: Write a function that takes a variable number of arguments and converts the arguments object into a real array using Array.from.
+// - [ ] **T-051**: Write a snippet to select all div elements on a webpage (using document.querySelectorAll) and convert the resulting NodeList into an array.
+// - [ ] **T-052**: Merge these two arrays into a single array:
+
+//   ```js
+//   const arr1 = [1, 2];
+//   const arr2 = [3, 4];
+//   ```
+
+// - [ ] **T-053**: Create an array of n duplicate values using Array.from. Input: Create an array with 5 "A" values. Output: ["A", "A", "A", "A", "A"]
+// - [ ] **T-054**: Use Array.from to convert a string like "Hello" into an array of characters.
+// - [ ] **T-055**: For the array, ['apple', 'banana', 'apricot', 'mango', 'blueberry'], group words by their first letter using group().
+// - [ ] **T-057**: From this array [3, 7, 3, 2, 3, 8, 7, 7], find the most repeated number. Hint: Use array method.
+// - [ ] **T-058**: Find the median of [5, 2, 9, 1, 3, 6, 8].
+// - [ ] **T-059**: Convert this array [['a', 1], ['b', 2], ['c', 3]], into { a: 1, b: 2, c: 3 } using array method(s).
+// - [ ] **T-060**: Flatten and convert all letters to uppercase in one step using flatMap(). Here is input array: [['a', 'b'], ['c', 'd']].
+// - [ ] **T-061**: Count the occurrences of each fruit in this array: ['apple', 'banana', 'apple', 'mango', 'banana', 'banana']
+// - [ ] **T-062**: Extract extract [‘b’, ‘c’, ‘d’] using slice() from this array: ['a', 'b', 'c', 'd', 'e']
+// - [ ] **T-063**: Sort the array [9, 3, 1, 6, 8] in ascending order using toSorted()
+// - [ ] **T-064**: Reverse [1, 2, 3, 4, 5] using toReversed() and compare it with reverse()
+// - [ ] **T-065**: Group the follwing array elements based on age(Adult vs Non-Adult):
+
+// ```js
+// const users = [
+//   { name: 'Alice', age: 55 },
+//   { name: 'Bob', age: 3 },
+//   { name: 'Charlie', age: 25 },
+// ];
+// ```
+
+// - [ ] **T-066**: Find the longest word in this sentence using Array and Array methods: "40 Days of JavaScript by tapaScript is a powerful initiative".
+// - [ ] **T-067**: Find common elements between two arrays, [1, 2, 3, 4], [3, 4, 5, 6]
