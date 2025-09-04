@@ -1,0 +1,88 @@
+📅 September Timetable: React.js + Node.js (Blended Approach)
+Week 1 (Sept 1 – Sept 7) → Phase 1: Foundations
+
+🎯 Goal: Get comfortable with React + Node basics.
+
+Mon (Sept 1) – React Basics: JSX, Components, Props (1.5h tutorial + 2h coding)
+
+Tue (Sept 2) – React useState + small exercises (counter app, toggler).
+
+Wed (Sept 3) – Node.js Basics: Setting up Express server, routes.
+
+Thu (Sept 4) – Node.js: Middleware + practice (basic logging).
+
+Fri (Sept 5) – Project: React Counter App + Node Hello API (4h build, 6h debug/practice).
+
+Sat (Sept 6) – Mini Project: To-Do App in React (state, props, events). (~10h)
+
+Sun (Sept 7) – Mini Project: Notes API with Node.js & Express (~10h).
+
+Week 2 (Sept 8 – Sept 14) → Phase 2: Core Concepts
+
+🎯 Goal: Learn React useEffect, lists, forms + Node CRUD API.
+
+Mon (Sept 8) – React useEffect, lists & keys.
+
+Tue (Sept 9) – React Forms + validation.
+
+Wed (Sept 10) – Node CRUD operations with in-memory array.
+
+Thu (Sept 11) – Connect Node API to Postman (test endpoints).
+
+Fri (Sept 12) – Full-stack Mini Project: Connect React To-Do → Node API (~10h).
+
+Sat (Sept 13) – Extend project: Add form validation, API error handling. (~10h).
+
+Sun (Sept 14) – Review + polish + push to GitHub (~10h).
+
+Week 3 (Sept 15 – Sept 21) → Phase 3: Intermediate
+
+🎯 Goal: Work with real data, React Router, MongoDB basics.
+
+Mon (Sept 15) – React Router basics (multi-page app).
+
+Tue (Sept 16) – React Context API (state management).
+
+Wed (Sept 17) – Node + MongoDB basics (CRUD).
+
+Thu (Sept 18) – Authentication intro (JWT).
+
+Fri (Sept 19) – Project: Blog API with Node + MongoDB (~10h).
+
+Sat (Sept 20) – Project: Movie Search App (React + external API). (~10h).
+
+Sun (Sept 21) – Full-stack Auth System (React + JWT + MongoDB). (~10h).
+
+Week 4 (Sept 22 – Sept 28) → Phase 4: Advanced
+
+🎯 Goal: Build full-stack apps with real features.
+
+Mon (Sept 22) – React: Custom Hooks + optimization.
+
+Tue (Sept 23) – React: Testing basics (Jest/React Testing Library).
+
+Wed (Sept 24) – Node: File uploads (multer).
+
+Thu (Sept 25) – Node: WebSockets intro (real-time chat basics).
+
+Fri (Sept 26) – Project: Social Media Clone (posts, likes, comments). (~10h).
+
+Sat (Sept 27) – Continue + Add authentication + MongoDB integration. (~10h).
+
+Sun (Sept 28) – Polish + Deploy to Vercel (React) & Render (Node). (~10h).
+
+Week 5 (Sept 29 – Sept 30) → Phase 5: Portfolio & Wrap-up
+
+🎯 Goal: Polish + deploy portfolio projects.
+
+Mon (Sept 29) – Documentation + GitHub cleanup + write READMEs.
+
+Tue (Sept 30) – Deploy all apps (Netlify/Vercel + Render/Heroku).
+
+✅ Summary
+
+Weekdays → Learn concepts + build small things.
+
+Weekends → Full-stack projects, debugging, deployment.
+
+By end of September → You’ll have at least 3–4 full-stack apps ready for your portfolio.
