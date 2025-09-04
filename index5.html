@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting Parent Element using DOM.</title>
+</head>
+<body>
+    <div class="title">
+        <p class="text">Welcome to GreatStack</p>
+    </div>
+
+    <div class="welcome">
+        <p>Welcome to GreatStack</p>
+        <p>Welcome to GreatStack</p>
+        <p>Welcome to GreatStack</p>
+        <p>Welcome to GreatStack</p>
+    </div>
+
+    <ul id="menu">
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+        <li>Projects</li>
+    </ul>
+
+    <!--createElement()-->
+    <!--appendChild()-->
+    <script>
+        let menu = document.getElementById('menu');
+        
+        console.log(menu.textContent)
+
+        menu.innerHTML = '<h2>Hello SWE<h2/>'
+
+        let list = document.createElement('li');
+        let div = document.createElement('div');
+        list.innerHTML = 'Contact';
+
+        menu.appendChild(list)
+        div.innerHTML = '<p>Tendo Calvin SWE</p>';
+
+        div.id = 'title'
+        div.className = 'title'
+        document.body.appendChild(div)
+        console.log(div);
+        let Parent = document.querySelector('.welcome')
+        console.log(parent.firstElementChild)
+        let text = document.querySelector('.title');
+        console.log(title.parentNode)
+    </script>
+</body>
+</html>
