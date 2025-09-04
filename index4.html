@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 class="message">Machine Learning</h1>
+
+        <div id="container">
+        <h1 class="message">Big Data Analytics</h1>
+        <h1 class="message">Deep Learning</h1>
+        </div>
+      
+        <p>First heading</p>
+        <p>Second heading</p>
+        <p>Third heading</p>
+        <p>Fourth heading</p>
+    </div>
+
+    <!--Method called: getElementByTagName-->
+    <!--Method called: querySelector--> <!--This method only chooses the first element
+                                        of many items-->
+    <!--Method called: querySelectorAll--> <!--This method chooses all element in a group-->
+    <script>
+        let query = document.querySelector(".message")
+        let queries = document.querySelectorAll("h1")
+        let cont = document.getElementById("container")
+        let message = document.getElementsByClassName('message')
+        let file = document.getElementsByTagName("p");
+    </script>
+</body>
+</html>
