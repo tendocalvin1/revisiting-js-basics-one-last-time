@@ -24,3 +24,5 @@ secretScroll.textContent = "Ancient Spell Scroll"
 
 console.log("Spell type:",secretScroll.dataset.spell)
 console.log("Components:",secretScroll.dataset.componenets.split(','))
+
+// Manipulating classes using DOM manipulation
