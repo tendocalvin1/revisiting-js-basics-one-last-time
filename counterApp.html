@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+</head>
+<body>
+    <div id="container">
+        <p id="counter">0</p>
+        <button style="border-radius: 18px;" id="addition-btn">Addition button</button><br>
+        <button style="border-radius: 18px;" id="reset-btn">Reset button</button><br>
+        <button style="border-radius: 18px;" id="subtraction-btn">Subtraction button</button><br>
+    </div>
+
+    <script>
+        // Step 1: Global count variable
+        let count = 0;
+
+        // Step 2: Select elements
+        const counterDisplay = document.getElementById("counter");
+        const additionBtn = document.getElementById("addition-btn");
+        const subtractionBtn = document.getElementById("subtraction-btn");
+        const resetBtn = document.getElementById("reset-btn");
+
+        // Step 3: Define functions
+        function add() {
+            count += 1;
+            counterDisplay.innerText = count;
+        }
+
+        function subtract() {
+            count -= 1;
+            counterDisplay.innerText = count;
+        }
+
+        function reset() {
+            count = 0;
+            counterDisplay.innerText = count;
+        }
+
+        // Step 4: Attach event listeners
+        additionBtn.addEventListener("click", add);
+        subtractionBtn.addEventListener("click", subtract);
+        resetBtn.addEventListener("click", reset);
+    </script>
+</body>
+</html>

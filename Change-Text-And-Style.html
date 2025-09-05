@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Text and Style</title>
+</head>
+<body style="background-color: hsl(165, 84%, 70%);">
+    <h1>Text And Style</h1>
+    <p id="my-paragraph">This is my original Text</p>
+    
+    <div>
+        <button id="btn" onclick="ChangeText()" style="border-radius: 15px;">Click Me</button>
+    </div>
+
+    <script>
+        function ChangeText(){
+        const paragraph = document.getElementById('my-paragraph')
+
+        // change Text
+        paragraph.innerText = "I am a SWE by profession and a problem solver in the long run"
+
+
+        paragraph.style.color = "yellowgreen";
+        paragraph.style.fontSize = "24px";
+
+        console.log("Button clicked")
+        }
+
+        
+    </script>
+
+
+</body>
+</html>
