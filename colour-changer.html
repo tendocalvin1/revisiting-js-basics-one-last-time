@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Changer</title>
+</head>
+<body>
+    <div>
+        <button id="red-color">Red</button><br>
+        <button id="yellow-color">Yellow</button><br>
+        <button id="green-color">Green</button><br>
+    </div>
+
+    <script>
+
+        let greenBtn = document.getElementById("green-color")
+        let yellowBtn = document.getElementById("yellow-color")
+        let redBtn = document.getElementById("red-color")
+
+        function change(event){
+
+            let clickedBtn = event.target.id; // get id of the clicked button
+            if(clickedBtn=== 'green-color'){
+                return document.body.style.backgroundColor = "green";
+            }else if(clickedBtn === 'red-color'){
+                return document.body.style.backgroundColor = "red";
+            }else if(clickedBtn === 'yellow-color'){
+                return document.body.style.backgroundColor = "yellow";
+            }else{
+                console.log("This color is out of the required scope");
+            }
+        }
+
+       
+
+
+        // Run toggle function when button is clicked
+        redBtn.addEventListener('click', change)
+        yellowBtn.addEventListener('click', change)
+        greenBtn.addEventListener('click', change)
+
+    </script>
+</body>
+</html>
