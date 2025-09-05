@@ -28,6 +28,19 @@
 
         menu.insertAdjacentHTML("beforeend", "<li>contact<li/>");
 
+        // cloneNode method
+
+        let menu_bar = menu.cloneNode();
+        console.log(newNode);
+
+        // removeChild [This removes the last Element in the list]
+        menu.removeChild(menu.lastElementChild)
+
+        menu.removeChild(menu.firstElementChild);
+
+        // insertBefore - this method accepts two arguments
+        menu.insertBefore(newNode, menu.firstElementChild);
+
         
     </script>
 </body>
