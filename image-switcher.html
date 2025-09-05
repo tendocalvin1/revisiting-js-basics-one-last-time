@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+</head>
+<body>
+    <h3>Image Switcher</h3>
+    <button id="btn" style="border-radius: 18px;">Switch</button>
+    <img src="IMG-20250624-WA0005.jpg" alt="Cisco Rack" id="image-one" width="300px"><br>
+
+    <script>
+        let image = document.getElementById("image-one");
+        let button = document.getElementById("btn");
+
+        function toggle(){
+            // Check if the current image is the first one
+            if(image.src.includes("IMG-20250624-WA0005.jpg")){
+                image.src = "IMG-20250624-WA0006.jpg"; // switch to second image
+            } else {
+                image.src = "IMG-20250624-WA0005.jpg"; // switch back to first image
+            }
+        }
+
+        // Run toggle function when button is clicked
+        button.addEventListener("click", toggle);
+    </script>
+</body>
+</html>
