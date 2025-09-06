@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+</head>
+<body>
+    <h3>To-Do List</h3>
+    <input id="task-input">
+    <button id="addBtn">Add Task</button>
+    <ul id="task-list"></ul>
+
+    <script>
+
+        let taskList = document.getElementById("task-list");
+        let taskInput = document.getElementById("task-input");
+        let addItems = document.getElementById("addBtn");
+
+
+         // ✅ attach listener to button (you had it on input before)
+
+         addItems.addEventListener('click', AddTask)
+
+         const AddTask =()=>{
+            let task = taskInput.value.trim() // task-input usage
+
+            if(task === ""){
+                console.log("Stop: empty task");
+                return;
+            }
+
+            // createElement usage
+
+            let li = document.createElement("li");
+            li.textContent = task;
+
+            // complete button
+            let completeBtn = document.createElement("button");
+            completeBtn.textContent = 'Complete';
+            completeBtn.addEventListener("click", markComplete);
+
+            // delete button
+            let deleteBtn = document.createElement("button");
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.addEventListener("click", deleteTask)
+
+
+            // append buttons to li
+            li.appendChild(completeBtn);
+            li.appendChild(deleteBtn);
+
+            // append li to ul
+            taskList.appendChild(li);
+
+
+            // clear input
+            taskInput.value = "";
+
+            
+            const markComplete =()=>{
+                let li = event.target.parentElement;
+                li.classList.toggle("completed");
+                console.log("Marked Complete");
+            }
+
+        const deleteTask =()=>{
+            let li = evemt.target.parentElement
+            taskList.removeChild(li);
+        }
+         }
+    </script>
+</body>
+</html>
