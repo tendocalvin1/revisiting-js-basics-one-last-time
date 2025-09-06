@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error{
+            color: red;
+            font-size: 1.8em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            width: 250px    ;
+        }
+    </style>
+</head>
+<body>
+    <h3>Form Validation</h3>
+
+    <form id="signup-form">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email">
+    <div id="email-error" class="error"></div>
+
+
+    <label for="password">password</label>
+    <input type="password" id="password" name="password">
+    <div id="password-error" class="error"></div>
+
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" id="confirm-password" name="confirm-password">
+    <div id="confirm-error" class="error"></div>
+
+    <button type="submit">Sign Up</button>
+    <button type="reset">Reset</button>
+    
+    </form>
+
+   
+
+    <script>
+        
+        let form = document.getElementById("signup-form");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let confirm_password = document.getElementById("confirm-password");
+
+
+        let email_error = document.getElementById("email-error");
+        let password_error = document.getElementById("password-error");
+        let confirm_error = document.getElementById("confirm-error");
+
+
+        form.addEventListener('submit', function(event){
+            // clear previous errors
+            email_error.textContent = "";
+            password_error.textContent = "";
+            confirm_error.textContent = "";
+
+
+            let isValid = true;
+
+            // validate email
+            const emailValue = email.value.trim();
+
+            if(emailValue === ""){
+                email_error.textContent = "Email cannot be Empty";
+                isValid = false;
+            }else if(!emailValue.includes("@")){
+                email_error.textContent = "Email must contain @"
+                isValid = false;
+            }
+
+             // Validate password
+      const passwordValue = password.value.trim();
+      if(passwordValue === '') {
+        passwordError.textContent = 'Password cannot be empty';
+        isValid = false;
+      }
+
+      // Validate confirm password
+      const confirmValue = confirmPassword.value.trim();
+      if(confirmValue === '') {
+        confirmError.textContent = 'Confirm your password';
+        isValid = false;
+      } else if(passwordValue !== confirmValue) {
+        confirmError.textContent = 'Passwords do not match';
+        isValid = false;
+      }
+
+       // Prevent form submission if invalid
+       if(!isValid) {
+        event.preventDefault();
+      } else {
+        alert('Form submitted successfully!');
+      }
+
+
+        })
+    </script>
+</body>
+</html>

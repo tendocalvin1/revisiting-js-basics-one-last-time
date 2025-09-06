@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Accordion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    .faq .answer {
+      display: none; /* hidden by default */
+      padding: 10px 20px;
+      border-left: 3px solid #007BFF;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+    }
+
+    .faq .question {
+      cursor: pointer;
+      padding: 10px 20px;
+      margin-bottom: 5px;
+      width: 100%;
+      text-align: left;
+      font-weight: bold;
+      background-color: #e0e0e0;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+    }
+
+    .faq .question.active {
+      background-color: #007BFF;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>FAQ Section</h2>
+  <div class="faq">
+    <button class="question">What is your name?</button>
+    <div class="answer">My name is Tendo Calvin.</div>
+
+    <button class="question">How old are you?</button>
+    <div class="answer">I am 23 years old.</div>
+
+    <button class="question">What do you do?</button>
+    <div class="answer">I am a Software Engineer (SWE).</div>
+  </div>
+
+  <script>
+    // Select all question buttons
+    const questions = document.querySelectorAll('.faq .question');
+
+    questions.forEach(question => {
+      question.addEventListener('click', () => {
+        // Toggle the active class on question
+        question.classList.toggle('active');
+
+        // Get the corresponding answer (next sibling)
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('show');
+
+        // Toggle visibility
+        if(answer.classList.contains('show')){
+          answer.style.display = 'block';
+        } else {
+          answer.style.display = 'none';
+        }
+
+        // Optional: close other answers (accordion behavior)
+        questions.forEach(q => {
+          if(q !== question){
+            q.classList.remove('active');
+            q.nextElementSibling.style.display = 'none';
+            q.nextElementSibling.classList.remove('show');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
